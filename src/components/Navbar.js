@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from "react-router-dom"
-export default class Navbar extends Component {
+ const Navbar = () =>  {
     // inputField = document.getElementById("searchField");
 
-    handleSearch = (event) =>{
+    const handleSearch = (event) =>{
         let newsCards = document.querySelectorAll(".article");
         console.log(newsCards);
         newsCards.forEach(card=>{
@@ -14,7 +14,7 @@ export default class Navbar extends Component {
             }
         })
     }
-    render() {
+
 
         
         return (
@@ -40,7 +40,7 @@ export default class Navbar extends Component {
                         </ul>
 
                         <form className="d-flex" role="search">
-                            <input className="form-control me-2" type="search" placeholder="Search News..." aria-label="Search" id='searchField' onInput={this.handleSearch}/>
+                            <input className="form-control me-2" type="search" placeholder="Search News..." aria-label="Search" id='searchField' onInput={handleSearch}/>
                             <button className="btn btn-outline-success" type="submit">Search</button>
                         </form>
 
@@ -48,5 +48,7 @@ export default class Navbar extends Component {
                 </div>
             </nav>
         )
-    }
+
 }
+
+export default Navbar
